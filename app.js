@@ -22,8 +22,8 @@ function perDetails()
  	console.log(`His name is ${name} and his age is ${age} and works as a ${position}`)
 
 	// string Raw 
-  	 console.log(String.raw`His name is \n ${name} and age is ${age}`);
-  	 console.log(String.raw`World hello`);
+  	console.log("Hello worlds");
+
     const ul = document.querySelector(".nav-bar");
     const players=[
 
@@ -34,6 +34,7 @@ function perDetails()
     ]
     let list ="";
     let filteredList=""
+    console.log("Hello worlds 2");
     const playersList=players.forEach(function(player, index) {
     	// statements
     	list +=`<li class="nav-items">${player.name} is ranked at ${player.rank}</li>`;
