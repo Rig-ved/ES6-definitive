@@ -17,6 +17,7 @@ function perDetails()
 {
 
 
+
  	const name="John",age=16,position="manager";
  	console.log(`His name is ${name} and his age is ${age} and works as a ${position}`)
 
