@@ -59,6 +59,7 @@ perDetails();
 function mapArtists()
 {
 	
+	
 	const artists = [
 	
 		{artist:"ACDC",song:"Highway to Hell"},
