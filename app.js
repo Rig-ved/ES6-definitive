@@ -22,7 +22,8 @@ function perDetails()
  	console.log(`His name is ${name} and his age is ${age} and works as a ${position}`)
 
 	// string Raw 
-   // console.log(String.raw`His name is \n ${name} and age is ${age}`);
+  	 console.log(String.raw`His name is \n ${name} and age is ${age}`);
+  	 console.log(String.raw`World hello`);
     const ul = document.querySelector(".nav-bar");
     const players=[
 
