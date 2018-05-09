@@ -18,11 +18,11 @@ function perDetails()
 
 
 
- 	const name="John",age=16,position="manager";
- 	console.log(`His name is ${name} and his age is ${age} and works as a ${position}`)
+    const name="John",age=16,position="manager";
+    console.log(`His name is ${name} and his age is ${age} and works as a ${position}`)
 
-	// string Raw 
-  	console.log("Hello worlds");
+    // string Raw 
+    console.log("Hello worlds");
 
     const ul = document.querySelector(".nav-bar");
     const players=[
@@ -34,21 +34,20 @@ function perDetails()
     ]
     let list ="";
     let filteredList=""
-    console.log("Hello worlds 2");
     const playersList=players.forEach(function(player, index) {
-    	// statements
-    	list +=`<li class="nav-items">${player.name} is ranked at ${player.rank}</li>`;
-    	
+        // statements
+        list +=`<li class="nav-items">${player.name} is ranked at ${player.rank}</li>`;
+        
     });
 
     const filteredPlayerList=players.filter(function(player,index){
-    	if (player.jersey == 21){
-    		filteredList +=`<li class="nav-items">${player.name} has jersey ${player.jersey}</li>`;	
-    	}
-    	return filteredList;
+        if (player.jersey == 21){
+            filteredList +=`<li class="nav-items">${player.name} has jersey ${player.jersey}</li>`; 
+        }
+    
     });
     
-    ul.insertAdjacentHTML("afterbegin",filteredList)	;
+    ul.insertAdjacentHTML("afterend",filteredList)    ;
     ul.insertAdjacentHTML("afterbegin",list);
    
 }
@@ -59,30 +58,52 @@ perDetails();
 ***********    Array Declarative syntax as well as helpers ************************
   covered map, forEach, filter and reduce
 */
-function mapArtists()
+const mapArtists=()=>
 {
-	
-	
-	const artists = [
-	
-		{artist:"ACDC",song:"Highway to Hell"},
-		{artist:"Pink Floyd",song:"Coming back to life"},
-		{artist:"Scorpions",song:"Still Loving You"},
-		{artist:"Deep Purple",song:"Smoke on the water"}
+    const artists = [
+        
+         {artist:"ACDC",song:"Still Loving You"},
+        {artist:"ACDC",song:"Highway to Hell"},
+        {artist:"Scorpions",song:"Coming back to life"},
+       
+        {artist:"Scorpions",song:"Smoke on the water"}
 
-	];
-	let ul = document.querySelector(".nav-bar");
+    ];
+    const artistsMapSerialised=artists.map(function(artist){
+        let template ="";
+        template +=`<li style='color:red;margin-left:30px'>The song ${artist.song} is played by ${artist.artist}</li>`
+        return template;
+    });
 
-	const artistsSerialised=artists.map(function(artist){
-		let template ="";
-		template +=`<li style='color:red;margin-left:30px'>The song ${artist.song} is played by ${artist.artist}</li>`
-		return template;
-	})
-	ul.insertAdjacentHTML("afterbegin",artistsSerialised);
+    const artistFind = artists.find((artist)=>{
+        return artist.artist==="ACDC"
+    })
+
+    const artistReduce=artists.reduce((start,artist)=>{
+            return (artist.artist=="Scorpions") ? ({ACDC:start.ACDC,Scorpions:start.Scorpions+1}):({ACDC:start.ACDC+1,Scorpions:start.Scorpions})
+    },{ACDC:0,Scorpions:0})
+
+    console.log(artistReduce);
+    console.log(artistFind);
+    console.log(artistsMapSerialised);
 
 }
 mapArtists();
 
+/*
+*************************** Fat Arrow Functions **********************************
+*/
+
+
+const fatArrow = (name,value) =>{
+    name += " How are you?"
+    return `Welcome ${name} your current oustanding value is ${value}`
+}
+
+console.log(fatArrow("Rick",12));
+/*
+Rest and spread operators
+*/
 
 
 
