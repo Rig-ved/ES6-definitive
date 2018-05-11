@@ -101,9 +101,48 @@ const fatArrow = (name,value) =>{
 }
 
 console.log(fatArrow("Rick",12));
-/*
-Rest and spread operators
-*/
+/*Rest and spread operators*/
 
 
+/*Default Arguments*/
+const defaultArgs = (item=2)=>{
+   return (Math.floor(10 * item));
+}
+console.log(defaultArgs());
+/*Default Arguments Ends*/
 
+
+/*Classes In ES6*/
+
+class Car {
+
+    constructor({brand,make}){
+         this.brand=brand;
+         this.make=make;
+         this.availability =()=>{
+            console.log(`hello ${this.brand} is available `)
+         }
+
+    }
+    testDrive(){
+        console.log("asasss");
+    }
+}
+const newChev = new Car({
+    brand:"Chev",
+    make:"2012"    
+});
+console.log(newChev);
+
+class Ford extends Car{
+    constructor(){
+        const type={brand:"Ford",make:2013};
+        super(type)
+    }
+}
+class XSeries extends Ford {}
+const sSeries = new XSeries()
+
+const newFord= new Ford()
+console.log(sSeries);
+console.log(newFord);
