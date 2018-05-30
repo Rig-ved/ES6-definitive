@@ -114,35 +114,44 @@ console.log(defaultArgs());
 
 /*Classes In ES6*/
 
-class Car {
-
-    constructor({brand,make}){
-         this.brand=brand;
-         this.make=make;
-         this.availability =()=>{
-            console.log(`hello ${this.brand} is available `)
-         }
+/*Default Arguments Ends*/
+/*Classes In ES6*/
+class Car{
+    constructor(brand="Nissan",status="Available",neat="Indeed"){
+        this.brand=brand;
+        this.status=status;
+        this.neat=neat;
+        this.checkNeat=()=>{
+            return `${this.brand} is ${this.neat} a neat car`
+        }
 
     }
-    testDrive(){
-        console.log("asasss");
+    avail(){
+        console.log( `${this.brand} is ${this.status}`)
     }
 }
-const newChev = new Car({
-    brand:"Chev",
-    make:"2012"    
-});
-console.log(newChev);
+
 
 class Ford extends Car{
-    constructor(){
-        const type={brand:"Ford",make:2013};
-        super(type)
-    }
-}
-class XSeries extends Ford {}
-const sSeries = new XSeries()
+    constructor(...args){
+        super(args[0].brand,args[0].status,args[0].neat);
 
-const newFord= new Ford()
-console.log(sSeries);
+    }
+    ignition(){
+        console.dir(`${this.brand} is turned on`)
+
+    }
+
+}
+
+let newCar=new Car();
+
+let newFord= new Ford({
+    brand:"Ford",
+    status:"Not Available",
+    neat:"Not Neat"
+
+});
+
+console.log(newCar);
 console.log(newFord);
