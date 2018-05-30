@@ -69,6 +69,7 @@ const mapArtists=()=>
         {artist:"Scorpions",song:"Smoke on the water"}
 
     ];
+    
     const artistsMapSerialised=artists.map(function(artist){
         let template ="";
         template +=`<li style='color:red;margin-left:30px'>The song ${artist.song} is played by ${artist.artist}</li>`
@@ -104,12 +105,6 @@ console.log(fatArrow("Rick",12));
 /*Rest and spread operators*/
 
 
-/*Default Arguments*/
-const defaultArgs = (item=2)=>{
-   return (Math.floor(10 * item));
-}
-console.log(defaultArgs());
-/*Default Arguments Ends*/
 
 
 /*Classes In ES6*/
