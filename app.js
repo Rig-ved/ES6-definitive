@@ -12,6 +12,7 @@ constructor(height,width){
     }
 }
 console.log(Polygon.name)//Polygon
+console.log(Polygon)
 
 var Polygon2 = class PolygonNamed{
     constructor(height,width){
